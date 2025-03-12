@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Human Detection</title>
   <style>
-    /* 视频容器：居中显示视频 */
+    /* Center the video container */
     .video-container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 50px;
     }
-    /* 视频样式：调整宽度，可根据需要修改 */
+    /* Video style: set width to 80% of container */
     video {
       width: 80%;
       height: auto;
       background: #000;
     }
-    /* 按钮容器 */
+    /* Button container */
     .btn-container {
       text-align: center;
       margin-top: 20px;
     }
-    /* 按钮样式 */
+    /* Button style */
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -32,14 +32,13 @@
   </style>
 </head>
 <body>
-  <h1 style="text-align: center;">播放 Human Detection 视频</h1>
+  <h1 style="text-align: center;">Human Detection Video</h1>
   <div class="video-container">
-    <!-- 只保留一个视频标签，确保文件名与实际文件一致 -->
     <video id="video1" src="human detection.mp4" controls playsinline></video>
   </div>
   <div class="btn-container">
-    <button id="playBtn">start</button>
-    <button id="pauseBtn">stop</button>
+    <button id="playBtn">Start</button>
+    <button id="pauseBtn">Stop</button>
   </div>
 
   <script>
