@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>两个视频同时播放</title>
+  <title>播放 Human Detection 视频</title>
   <style>
-    /* 布局容器，让两个视频并排 */
+    /* 视频容器：居中显示视频 */
     .video-container {
       display: flex;
-      gap: 40px; /* 两个视频之间的间距 */
-      justify-content: center;  /* 水平居中 */
-      align-items: center;      /* 垂直居中 */
+      justify-content: center;
+      align-items: center;
       margin-top: 50px;
     }
-    /* 控制视频大小：让每个视频占容器宽度的 45%，并自适应高度 */
+    /* 视频样式：调整宽度，可根据需要修改 */
     video {
-      width: 45%;
+      width: 80%;
       height: auto;
-      background: #000; /* 给个黑色背景，避免在未加载视频时显示空白 */
+      background: #000;
     }
     /* 按钮容器 */
     .btn-container {
@@ -27,42 +26,33 @@
     button {
       padding: 10px 20px;
       font-size: 16px;
+      margin: 0 10px;
       cursor: pointer;
-      margin: 0 10px; /* 按钮之间的间距 */
     }
   </style>
 </head>
 <body>
-
-  <h1 style="text-align: center;">同时播放两个视频</h1>
-
-  <!-- 并排放置两个视频 -->
+  <h1 style="text-align: center;">播放 Human Detection 视频</h1>
   <div class="video-container">
-    <video id="video1" src="animation.mp4" controls></video>
-    <video id="video2" src="detection_fitted.mp4" controls></video>
+    <!-- 只保留一个视频标签，确保文件名与实际文件一致 -->
+    <video id="video1" src="human detection.mp4" controls playsinline></video>
   </div>
-
-  <!-- 播放/暂停按钮 -->
   <div class="btn-container">
-    <button id="playBtn">同时播放</button>
-    <button id="pauseBtn">同时暂停</button>
+    <button id="playBtn">start</button>
+    <button id="pauseBtn">stop</button>
   </div>
 
-  <!-- 简单的JS逻辑，实现同时播放/暂停 -->
   <script>
     const video1 = document.getElementById('video1');
-    const video2 = document.getElementById('video2');
     const playBtn = document.getElementById('playBtn');
     const pauseBtn = document.getElementById('pauseBtn');
 
     playBtn.addEventListener('click', () => {
       video1.play();
-      video2.play();
     });
 
     pauseBtn.addEventListener('click', () => {
       video1.pause();
-      video2.pause();
     });
   </script>
 </body>
